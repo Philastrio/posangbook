@@ -1,0 +1,36 @@
+type User {
+  id: ID! @id
+  userName: String! @unique
+  email: String! @unique
+  position: String
+  belongTo: String
+  Rank: String 
+  posts: [Post!]! @relation(name: "UserOfPosts")
+  loginSecret: String
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Post {
+  id: ID! @id
+  prizeNum: String! @unique
+  userName: User @relation(name: "PostsOfUser")
+  winnerName: String! 
+  birth: String! 
+  address: String!
+  docNum: Int! 
+  prizeCategory: String!
+  prizeRank: String!
+  prizeDate: String!
+  contribution: String!
+  belongTo: String
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Win {
+  id: ID! @id
+  winnerName: [Post!]! @relation(name: "WinnerOfPost")
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}

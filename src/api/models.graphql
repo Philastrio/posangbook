@@ -1,0 +1,36 @@
+type User {
+  id: ID!
+  userName: String!
+  email: String!
+  position: String
+  belongTo: String
+  Rank: String
+  posts: [Post!]!
+  loginSecret: String
+  createdAt: String
+  updatedAt: String
+}
+
+type Post {
+  id: ID!
+  prizeNum: String!
+  userName: User!
+  winnerName: String!
+  birth: String!
+  address: String!
+  docNum: Int!
+  prizeCategory: String!
+  prizeRank: String!
+  prizeDate: String!
+  contribution: String!
+  belongTo: String
+  createdAt: String
+  updatedAt: String
+}
+
+type Win {
+  id: ID!
+  winnerName: [Post!]!
+  createdAt: String
+  updatedAt: String
+}

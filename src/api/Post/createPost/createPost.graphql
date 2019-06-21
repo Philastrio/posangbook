@@ -1,0 +1,14 @@
+type Mutation {
+  createPost(
+    prizeNum: String!
+    winnerName: String!
+    birth: String!
+    address: String!
+    docNum: Int!
+    prizeCategory: String!
+    prizeRank: String!
+    prizeDate: String!
+    contribution: String!
+    belongTo: String
+  ): Post!
+}

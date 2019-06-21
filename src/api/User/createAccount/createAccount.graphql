@@ -1,0 +1,9 @@
+type Mutation {
+  createAccount(
+    userName: String!
+    email: String!
+    position: String!
+    belongTo: String!
+    Rank: String
+  ): User!
+}
